@@ -1,0 +1,93 @@
+.menuConteiner{
+  margin-top: $menuTopSpace;
+
+  position: fixed;
+  width: 100%;
+  height: $menuHeight;
+  background-color: $menubg;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+.fullMenuModal{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  transform: scale(1);
+  background: white;
+  
+  .menuElement{
+    width: 100vw;
+    background-color: rgba($color: #000000, $alpha: 1);
+    color: white;
+    display: block;
+    display: flex;
+    justify-content: center;
+    height: 19.5vh;
+  }
+}
+.pop-enter-active {
+  animation: pop 0.2s;
+}
+.pop-leave-active {
+  animation: pop 0.2s reverse;
+}
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.normalMenu{
+  display: flex;
+  .menuElement{
+    height: $menuHeight;
+    background-color: $menuElementbg;
+    width: 18vw;
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+  }
+}
+.menuElement:hover{
+  color: $firstColor;
+  fill: $firstColor;
+}
+.logo-letter{
+  font-size: 50px;
+}
+.activeElement{
+  color: $callToActionCollor;
+}
+
+#menu-small{
+  display: none;
+  align-items: center;
+}
+
+@media only screen and (max-width: $brakePoint){
+  #menu-small{
+    display: flex;
+  }
+  .normalMenu{
+    display: none;
+  }
+  .menuElement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    transition: fill 0.3s;
+    width: auto;
+  }
+}

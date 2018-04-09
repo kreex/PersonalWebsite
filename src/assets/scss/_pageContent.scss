@@ -1,0 +1,50 @@
+.left{
+  left: $sideSpaceing;
+}
+.right{
+  right: $sideSpaceing;
+  
+}
+.contentConteiner{
+  height: 73vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: $menuHeight + $menuTopSpace;
+
+
+}
+#fly{
+  margin-top: 10px;
+  position: absolute;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 500px;
+  transform: translateX(0vw);
+}
+.bounce-enter-active {
+  animation: out 0.2s;
+}
+.bounce-leave-active {
+  animation: out 0.2s reverse;
+}
+@keyframes out {
+  from {
+    transform: translateX(-30vw);
+  }
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+@media only screen and (max-width: $brakePoint) {
+
+    .contentConteiner{
+      width: 100vw;
+      height: 78vh;
+      left: 0px;
+    }
+  }

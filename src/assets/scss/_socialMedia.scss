@@ -1,0 +1,34 @@
+.socialMediaContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  right: $sideSpaceing;
+  width: 300px;
+  bottom: 3vh;
+  .mediaIcon{
+    svg{
+      fill: $fontsColor;
+      transition: fill 0.3s;
+    }
+    svg:hover{
+      fill: $firstColor;
+    }
+  }
+}
+
+@media only screen and (max-width: $brakePoint) {
+    .socialMediaContainer {
+      position: fixed;
+      align-content: center;
+      justify-content: space-around;
+      bottom: 0px;
+      width: 100%;
+      right: 0;
+      padding: 0;
+      .mediaIcon{
+        padding-left: 0;
+      }
+    }
+  }
